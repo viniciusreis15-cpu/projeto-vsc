@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
-    
-    
-    
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frases Inspiradoras</title>
+</head>
+<body>
 
-  </head>
-  <body>
-    <main>
-      <h1>Eventos onclick()</h1>;
-      <p id = "msg"> Mensagem</p>;
-      <button onclick = "clicar()"id = "click"> Click aqui!</button>;
-    </main>
-    <script>src="app.js"
-    </script>.      
-        </main>
-    <script src="sketch.js"></script>
-  </body>
+  <h1>Frases Inspiradoras</h1>
+
+  <p id="frase"></p>
+  <p id="autor"></p>
+
+  <button onclick="novaFrase()">Nova frase</button>
+
+  <script>
+    const frases = [
+      { texto: "A única maneira de fazer um excelente trabalho é amar o que você faz.", autor: "Steve Jobs" },
+      { texto: "A imaginação é mais importante que o conhecimento.", autor: "Albert Einstein" },
+      { texto: "Seja a mudança que você quer ver no mundo.", autor: "Mahatma Gandhi" },
+      { texto: "Conhece-te a ti mesmo.", autor: "Sócrates" },
+      { texto: "A vida é o que acontece quando você está ocupado fazendo outros planos.", autor: "John Lennon" },
+      { texto: "O sucesso é a soma de pequenos esforços repetidos dia após dia.", autor: "Robert Collier" },
+      { texto: "Não importa quantas vezes você caia, o que importa é quantas vezes você se levanta.", autor: "Nelson Mandela" },
+      { texto: "Toda criança é um artista. O problema é como permanecer um artista quando crescemos.", autor: "Pablo Picasso" },
+      { texto: "A felicidade não é algo pronto. Ela vem das suas próprias ações.", autor: "Dalai Lama" },
+      { texto: "Acredite que você pode, e você já está no meio do caminho.", autor: "Theodore Roosevelt" },
+    ];
+
+    let ultimo = -1;
+
+    function novaFrase() {
+      let i;
+      do { i = Math.floor(Math.random() * frases.length); } while (i === ultimo);
+      ultimo = i;
+      document.getElementById("frase").textContent = '"' + frases[i].texto + '"';
+      document.getElementById("autor").textContent = "— " + frases[i].autor;
+    }
+
+    novaFrase();
+  </script>
+
+</body>
 </html>
