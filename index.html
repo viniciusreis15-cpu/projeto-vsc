@@ -1,44 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Frases Inspiradoras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto VScode</title>
+    <link rel="stylesheet" hret="style.css"
 </head>
 <body>
-
-  <h1>Frases Inspiradoras</h1>
-
-  <p id="frase"></p>
-  <p id="autor"></p>
-
-  <button onclick="novaFrase()">Nova frase</button>
-
-  <script>
-    const frases = [
-      { texto: "A única maneira de fazer um excelente trabalho é amar o que você faz.", autor: "Steve Jobs" },
-      { texto: "A imaginação é mais importante que o conhecimento.", autor: "Albert Einstein" },
-      { texto: "Seja a mudança que você quer ver no mundo.", autor: "Mahatma Gandhi" },
-      { texto: "Conhece-te a ti mesmo.", autor: "Sócrates" },
-      { texto: "A vida é o que acontece quando você está ocupado fazendo outros planos.", autor: "John Lennon" },
-      { texto: "O sucesso é a soma de pequenos esforços repetidos dia após dia.", autor: "Robert Collier" },
-      { texto: "Não importa quantas vezes você caia, o que importa é quantas vezes você se levanta.", autor: "Nelson Mandela" },
-      { texto: "Toda criança é um artista. O problema é como permanecer um artista quando crescemos.", autor: "Pablo Picasso" },
-      { texto: "A felicidade não é algo pronto. Ela vem das suas próprias ações.", autor: "Dalai Lama" },
-      { texto: "Acredite que você pode, e você já está no meio do caminho.", autor: "Theodore Roosevelt" },
-    ];
-
-    let ultimo = -1;
-
-    function novaFrase() {
-      let i;
-      do { i = Math.floor(Math.random() * frases.length); } while (i === ultimo);
-      ultimo = i;
-      document.getElementById("frase").textContent = '"' + frases[i].texto + '"';
-      document.getElementById("autor").textContent = "— " + frases[i].autor;
-    }
-
-    novaFrase();
-  </script>
-
+    <h1>projeto DOM</h1>
+    <p id="msg">Mensagem inicial</p>
+    <button onclick = "geradorMensagem()">Apertar</button>
+    
+    <script src="app.js"></script>
 </body>
 </html>
