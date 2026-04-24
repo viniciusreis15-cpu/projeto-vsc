@@ -10,4 +10,3 @@ function geradorMensagem(){
   document.querySelector("#msg").textContent=fraseGerada;
   frases.splice(indiceGerado,1);
 }
-geradorMensagem()
